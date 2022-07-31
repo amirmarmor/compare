@@ -18,12 +18,11 @@ func Create() *EntryPoint {
 	return &EntryPoint{}
 }
 
-func (e *EntryPoint) Execute() error {
+func (e *EntryPoint) Execute(version string) error {
 	core.InitFlags()
 	log.InitFlags()
 	log.ParseFlags()
 
-	version := "1.0.6"
 	log.Info("Starting - " + version)
 
 	err := e.buildBLocks()
